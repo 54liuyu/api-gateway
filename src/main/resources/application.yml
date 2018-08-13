@@ -1,0 +1,21 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+server:
+  port: 80
+spring:
+  application:
+    name: api-gateway
+
+#zuul:
+#  routes:
+#    customer-app:
+#      path: /myapp/**
+#      serviceId: customer-app
+#    store-app:
+#      path: /myapp/**
+#      serviceId: store-app
